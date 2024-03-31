@@ -1,0 +1,183 @@
+﻿body {
+    background-color: #F3FFE3;
+    font-family: Arial, sans-serif; /* Set a base font family */
+    margin: 0; /* Remove default margin from body */
+    padding: 25px; /* Remove default padding from body */
+}
+
+p {
+    color: black;
+}
+
+h4 {
+    color: black;
+    background-color: #98ac7c;
+}
+
+.first {
+    text-align: center;
+}
+
+h1 {
+    padding: 65px 0;
+    height: 2px;
+    background-color: darkgreen;
+    color: black;
+    text-align: center;
+}
+
+  #personalDetails {
+            background-color: dodgerblue;
+        }
+
+        #questionaire {
+            background-color: lightseagreen;
+        }
+
+        #buttons {
+            background-color: darkblue;
+            color: darkolivegreen;
+            border: solid 3px;
+            border-radius: 5px;
+            text-align: right;
+            margin-right: 10px;
+            padding: 10px 20px;
+        }
+
+
+        h3 {
+            color: red;
+        }
+
+        #wrapper {
+            width: 60;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        label {
+            float: left;
+            width: 20%;
+            padding: 1px;
+        }
+
+
+#button {
+    background-color: black;
+    color: darkolivegreen;
+    border: solid 3px;
+    border-radius: 5px;
+    text-align: right;
+    margin-right: 10px;
+    padding: 10px 20px;
+    font-size: 20px;
+
+    cursor: pointer;
+    display: inline-block;
+    margin-top: 20px;
+}
+
+    #button:hover {
+        background-color: gray;
+    }
+
+fieldset {
+    border-radius: 10px;
+    margin-bottom: 12px;
+    background-color: #98ac7c;
+}
+
+/* Style the navigation bar container */
+nav {
+    overflow: hidden;
+    background-color: #98ac7c;
+    display: flex; /* Arrange links horizontally */
+    justify-content: space-between; /* Evenly distribute links */
+    /*            padding: 8px;*/
+    align-items: center;
+}
+
+    /* Style the list to be inline */
+    nav ul {
+        list-style: none; /* Remove default bullet points */
+        margin: 0; /* Remove default margin */
+        padding: 0; /* Remove default padding */
+        float: left;
+    }
+
+    nav li {
+        display: inline-block; /* Display links inline */
+        margin-right: 30px; /* Add spacing between links */
+        font-family: Georgia;
+        font-size: 40px;
+        float: left;
+    }
+
+    /*Style the navigation bar links */
+    nav a {
+        float: left;
+        /*Position the links side by side */ display: block;
+        color: #F3FFE3;
+        text-align: center;
+        text-decoration: none; /*Remove underline*/
+        padding: 20px 20px; /*Add padding for buttons */
+    }
+
+
+
+        /* Change the color of links on hover */
+        nav a:hover {
+            background-color: #F3FFE3;
+            color: darkgreen; /* Hover text color */
+        }
+
+    nav .active {
+        background-color: #98ac7c;
+        color: #f1f1f1; /* Active link text color */
+        text-decoration: underline;
+    }
+
+footer {
+    background-color: #f0f0f0;
+    padding: 20px;
+    text-align: center;
+    color: black; /* Set font color to black */
+}
+
+    footer p {
+        margin: 5px;
+        color: black;
+    }
+
+    footer a {
+        text-decoration: none;
+        color: black; /* Set font color to black */
+    }
+
+        footer a:hover {
+            text-decoration: underline; /* Underline link on hover */
+        }
+
+    footer address {
+        color: black; /* Set font color to black */
+    }
+
+/* Content Styles */
+main {
+    padding: 20px; /* Add padding for main content area */
+}
+
+
+
+/* Footer Styles */
+footer {
+    background-color: #333;
+    color: #fff; /* Set footer text color */
+    padding: 20px;
+    text-align: center; /* Center footer content */
+}
+
+    footer a {
+        color: inherit; /* Inherit text color from footer */
+        text-decoration: none; /* Remove underline from links */
+    }

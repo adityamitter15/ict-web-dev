@@ -1,0 +1,193 @@
+/* Body styles */
+body {
+    /* background-color: #f0f0f0; Light gray background color */
+    background-color: #98ac7c;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Font family */
+    margin: 0;
+    padding: 0;
+}
+
+/* Heading styles */
+h1 {
+    text-align: center;
+    padding: 20px 0;
+    color: #4a90e2; /* Blue color for heading */
+}
+
+/* SVG styles */
+.svg-group rect {
+    stroke: #4a90e2; /* Blue stroke color */
+    fill: #ffffff; /* White fill color */
+    stroke-width: 2;
+    rx: 8px; /* Horizontal radius for rounded corners */
+    ry: 8px; /* Vertical radius for rounded corners */
+    transition: fill 0.3s ease, stroke 0.3s ease; /* Transition for fill and stroke */
+}
+
+.svg-group text {
+    font-size: 16px; /* Font size */
+    text-anchor: middle;
+    fill: #4a90e2; /* Blue text color */
+    transition: fill 0.3s ease; /* Transition for text fill */
+}
+
+.svg-line,
+.svg-polyline {
+    stroke: #4a90e2; /* Blue stroke color */
+    stroke-width: 2;
+    transition: stroke 0.3s ease; /* Transition for stroke */
+}
+
+/* Hover and Focus Styles */
+.svg-group:hover polyline,
+.svg-group:focus polyline,
+.svg-group:hover line,
+.svg-group:focus line,
+.svg-group:hover rect,
+.svg-group:focus rect,
+.svg-group:hover polygon,
+.svg-group:focus polygon {
+    stroke: #4a90e2; /* Blue stroke color */
+    fill: #cce6ff; /* Light blue fill color */
+}
+
+.svg-group:hover g text,
+.svg-group:focus g text {
+    font-weight: bold;
+}
+
+.svg-group:hover polygon,
+.svg-group:focus polygon {
+    fill: rgba(76, 155, 255, 0.3); /* Light blue fill color with transparency */
+}
+
+
+/* Gallery */
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+}
+
+.gallery .gallery-item {
+    width: calc(50% - 20px); /* Adjusted width for two columns with margin */
+    height: 250px; /* Fixed height for consistent display */
+    margin: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    border-radius: 5px;
+    position: relative; /* Ensure overlay position relative to gallery item */
+}
+
+.gallery .gallery-item img {
+    width: 100%; /* Image width set to 100% of parent container */
+    height: auto; /* Maintain aspect ratio */
+    display: block;
+}
+
+.gallery .gallery-item:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+}
+
+.gallery .gallery-item .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0; /* Initially hidden */
+    transition: opacity 0.3s ease;
+}
+
+.gallery .gallery-item:hover .overlay {
+    opacity: 1; /* Show overlay on hover */
+}
+
+
+/* Content Page */
+.global-health-container {
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: #F3FFE3;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.global-health-container h1 {
+    color: #333;
+    text-align: center;
+}
+
+.global-health-container h2 {
+    color: #555;
+}
+
+.global-health-container p {
+    line-height: 1.6;
+}
+
+.global-health-container .image {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.global-health-container img {
+    max-width: 100%;
+    height: auto;
+}
+
+
+
+
+
+.custom-header {
+    background-color: #98ac7c;
+}
+
+.custom-header nav {
+    background-color: #98ac7c;
+}
+
+.custom-header nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    float: left;
+}
+
+.custom-header nav li {
+    display: inline-block;
+    margin-right: 30px;
+    font-family: Georgia;
+    font-size: 40px;
+    float: left;
+}
+
+.custom-header nav a {
+    float: left;
+    display: block;
+    color: #F3FFE3;
+    text-align: center;
+    text-decoration: none;
+    padding: 20px 20px;
+}
+
+.custom-header nav a:hover {
+    background-color: #F3FFE3;
+    color: darkgreen;
+}
+
+.custom-header nav .active {
+    background-color: #98ac7c;
+    color: #f1f1f1;
+    text-decoration: underline;
+}
