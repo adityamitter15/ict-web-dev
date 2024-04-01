@@ -1,7 +1,8 @@
 /* Body styles */
 body {
     /* background-color: #f0f0f0; Light gray background color */
-    background-color: #98ac7c;
+    /* background-color: #98ac7c; */
+    background-color: #f3ffe3;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Font family */
     margin: 0;
     padding: 0;
@@ -11,7 +12,7 @@ body {
 h1 {
     text-align: center;
     padding: 20px 0;
-    color: #4a90e2; /* Blue color for heading */
+    color: #98ac7c; 
 }
 
 /* SVG styles */
@@ -62,6 +63,36 @@ h1 {
 }
 
 
+/* Center the image */
+.image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px; /* Add some spacing */
+}
+
+/* Additional styles for the image */
+.sitemap-img {
+    max-width: 100%; /* Ensure the image doesn't exceed its container */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 10px; /* Add rounded corners */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+    transition: transform 0.3s ease; /* Add transition for hover effect */
+}
+
+/* Hover effect */
+.sitemap-img:hover {
+    transform: scale(1.05); /* Scale up the image on hover */
+}
+
+/* Styles for the SVG */
+.sitemap-svg {
+    /* Add specific styles for the SVG if needed */
+}
+
+
+
+
 /* Gallery */
 
 .gallery {
@@ -106,6 +137,10 @@ h1 {
     opacity: 0; /* Initially hidden */
     transition: opacity 0.3s ease;
 }
+.gallery .gallery-item .overlay p{
+    padding: 2rem;
+    font-weight: 400;
+}
 
 .gallery .gallery-item:hover .overlay {
     opacity: 1; /* Show overlay on hover */
@@ -147,47 +182,96 @@ h1 {
 
 
 
-
+/* navbar */
 
 .custom-header {
     background-color: #98ac7c;
+    padding: 10px;
+}
+.custom-header h1 {
+    font-size: 2px; /* Set heading size */
+    margin: 0; /* Remove default margin from heading */
 }
 
-.custom-header nav {
-    background-color: #98ac7c;
+.custom-header h1 a { /* Assuming logo is wrapped in an anchor tag */
+    text-decoration: none; /* Remove underline from logo link */
+    color: inherit; /* Inherit text color from header */
 }
-
-.custom-header nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    float: left;
-}
-
-.custom-header nav li {
-    display: inline-block;
-    margin-right: 30px;
-    font-family: Georgia;
-    font-size: 40px;
-    float: left;
-}
-
-.custom-header nav a {
-    float: left;
+.custom-header .logo img {
     display: block;
-    color: #F3FFE3;
-    text-align: center;
-    text-decoration: none;
-    padding: 20px 20px;
+    margin-left: 100px;
+}
+.custom-header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.custom-header .nav-items {
+    margin-right: 100px;
+}
+.custom-header .nav-items li {
+    display: inline-block;
+    margin-right: 20px;
 }
 
-.custom-header nav a:hover {
+.custom-header .nav-items a {
+    color: #F3FFE3;
+    text-decoration: none;
+    padding: 25px;
+    font-size: 18px;
+}
+
+.custom-header .nav-items a:hover {
     background-color: #F3FFE3;
     color: darkgreen;
 }
 
-.custom-header nav .active {
+
+.custom-header .nav-items .active {
     background-color: #98ac7c;
     color: #f1f1f1;
     text-decoration: underline;
+}
+footer {
+    background-color: #333;
+    padding: 20px;
+    text-align: center;
+    color: black;  /*Set font color to black */
+}
+
+footer p {
+    margin: 5px;
+    color: black;
+}
+
+footer a {
+    text-decoration: none;
+    color: black; /* Set font color to black */
+}
+
+    footer a:hover {
+        text-decoration: underline; /* Underline link on hover */
+    }
+
+footer address {
+    color: black; /* Set font color to black */
+}
+
+footer #footer-button {
+    background-color: black;
+    color: darkolivegreen;
+    border: solid 3px;
+    border-radius: 5px;
+    text-align: right;
+    margin-right: 10px;
+    padding: 10px 20px;
+    font-size: 20px;
+
+    cursor: pointer;
+    display: inline-block;
+    margin-top: 20px;
+}
+
+footer #footer-button:hover {
+    background-color: gray;
 }

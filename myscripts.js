@@ -36,8 +36,14 @@ document.getElementById("groupId10").addEventListener("click", function() {
     // Toggle visibility of students
     var students = document.getElementsByClassName("student");
     for (var i = 0; i < students.length; i++) {
-        students[i].style.display = (students[i].style.display === "none" ? "block" : "none");
+        students[i].style.display = (students[i].style.display === "block" ? "none" : "block");
     }
+});
+
+
+document.getElementById("groupId14")
+    .addEventListener("click", function() {
+    document.location.href = "content.html";
 });
 
 
@@ -92,13 +98,12 @@ document.getElementById('applyChanges').addEventListener('click', function() {
 //     $("#navbar-placeholder").load("path/to/HeaderFooter.html");
 // });
 
-document.addEventListener("DOMContentLoaded", function() {
-    // Fetch the header content
-    fetch('treya/header.html')
-        .then(response => response.text())
-        .then(data => {
-            // Insert the header content into the DOM
-            document.querySelector('body').insertAdjacentHTML('afterbegin', data);
-        })
-        .catch(error => console.error('Error fetching header:', error));
+
+
+
+/* go to top button*/
+document.addEventListener("DOMContentLoaded", function () {
+    document.getElementById("footer-button").addEventListener("click", function () {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
 });
