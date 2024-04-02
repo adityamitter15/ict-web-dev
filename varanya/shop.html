@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Good Health and Wellbeing</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="homepage.html" class="active">
+                    <img src="images/logo.png" alt="logo" width="125px" height="80px"> 
+                </a>
+            </div>
+            <ul class="nav-items">
+                <li><a href="#">Gallery</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="#">Feedback</a></li>
+                <li><a href="#">Sitemap</a></li>
+                <li><a href="#">Team</a></li>
+                <li><a href="#">User Profile</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">  <!-- Container for the entire content -->  
+        <div id="cart">  <!-- Cart section --> 
+            <h2>Cart</h2>
+            <ul id="cart-items"><!-- Cart items will be added here -->
+            </ul>
+            <button onclick="checkout()">Checkout</button>  <!-- Button to initiate checkout -->
+            <button onclick="resetCart()">Reset Cart</button> <!-- Button to reset the cart -->
+        </div>
+        <div id="items-container" class="product-container"> <!-- Container for displaying items -->
+        </div>
+    </div>
+    <script> <!-- JavaScript code --> 
+        const itemsData = [ // Data for items
+            { id: 1, name: 'Vitamin C', price: 8, image: "images/VitaminC.png" },
+            { id: 2, name: 'Calcium', price: 15, image: "images/calcium.jpeg"},
+            { id: 3, name: 'Protein Powder', price: 10, image:"images/proteinpowder.png" },
+            { id: 4, name: 'Magnesium', price: 12, image:"images/magnesium.png" },
+            { id: 5, name: 'Protein Shake', price: 3, image:"images/proteinshake.png" },
+            { id: 6, name: 'Multivitamin', price: 18 , image:"images/multivitamin.png"}
+        ];
+
+        function displayItems() {  // Function to display items in the container
+            const itemsContainer = document.getElementById('items-container');  // Get the container where items will be displayed
+            itemsData.forEach(item => {   // Iterate through each item in the data
+                const itemElement = document.createElement('div');  // Create a div element for each item
+                itemElement.classList.add('product-box');  // Add class to the item div
+                itemElement.innerHTML =  // Setting the inner HTML of the item element to display item details and add to cart button
+                `<img src="${item.image}" alt= "Vitamin C" width="200px" height="200px">
+                    <h2>${item.name}</h2>
+                    <p>Price: £${item.price}</p>
+                    <label for="quantity-${item.id}">Quantity:</label>
+                    <input type="number" id="quantity-${item.id}" value="1" min="1" max="100">
+                    <button onclick="addToCart(${item.id})">Add to Cart</button>
+                `;
+                itemsContainer.appendChild(itemElement);  // Append the item div to the items container
+            });
+        }
+        function addToCart(itemId) {   // Function to add items to the cart
+            const selectedItem = itemsData.find(item => item.id === itemId);  // Find the selected item by its ID
+            const quantityInput = document.getElementById(`quantity-${itemId}`);  // Get the quantity input element for the selected item
+            const quantity = parseInt(quantityInput.value); // Get the quantity value as an integer
+            if (selectedItem && quantity > 0) {  // Check if the selected item and quantity are valid
+                const cartItems = document.querySelectorAll('#cart-items li'); // Get all existing items in the cart
+                let alreadyInCart = false;  // Flag to track if the item is already in the cart
+                cartItems.forEach(item => {  // Loop through all items in the cart
+                    const itemName = item.textContent.split(' - ')[0]; // Extract the name of the item from the cart item text
+                    if (itemName === selectedItem.name) {  // If the current item matches the selected one
+                        const existingQuantity = parseInt(item.textContent.split(' - ')[1].split(': ')[1]);   // If the item is already in the cart, update its quantity and total
+                        item.textContent = `${selectedItem.name} - Quantity: ${existingQuantity + quantity} - Total: £${selectedItem.price * (existingQuantity + quantity)}`;
+                        alreadyInCart = true;
+                    }
+                });
+                if (!alreadyInCart) { // If the item is not already in the cart, add it
+                    const cartItemsElement = document.getElementById('cart-items');
+                    const cartItemElement = document.createElement('li');
+                    cartItemElement.textContent = `${selectedItem.name} - Quantity: ${quantity} - Total: £${selectedItem.price * quantity}`;
+                    cartItemsElement.appendChild(cartItemElement);
+                }
+                quantityInput.value = 1; // Reset the quantity input to 1 after adding the item to the cart
+            }
+        }
+        function resetCart() { // Get the cart items element
+    const cartItemsElement = document.getElementById('cart-items');
+    
+    // Remove all child elements (cart items) from the cart
+    cartItemsElement.innerHTML = '';
+}
+
+        function checkout() {  // Function to initiate checkout process
+            const cartItemsElement = document.getElementById('cart-items'); // Get the element that contains the cart items
+            if (cartItemsElement.children.length === 0) { // Check if the cart is empty
+                alert('Please add items to the cart before proceeding to checkout.'); // Display an alert if the cart is empty
+                return;
+            }
+            let totalAmount = 0; // Initialize total amount
+            const cartItems = document.querySelectorAll('#cart-items li'); // Get all the cart items
+            cartItems.forEach(item => {  // Loop through each item in the cart
+                const itemPrice = parseFloat(item.textContent.split('Total: £')[1]); // Extract the price from the cart item text and convert it to a floating-point number
+                totalAmount += itemPrice;
+            });
+            const checkoutForm = ` 
+            <form id="checkout-form">
+                    <h2>Checkout</h2>
+                    <fieldset id="details">
+                        <legend>Contact Details</legend> <!-- Input fields for contact details -->
+                        <label for="name">Name<span class="required">*</span></label>
+                        <input type="text" id="name" oninput="filterToCharacters(this)" required><br>
+                        <label for="surname">Surname<span class="required">*</span></label>
+                        <input type="text" id="surname" oninput="filterToCharacters(this)"><br>
+                        <label for="email">Email<span class="required">*</span></label>
+                        <input type="email" id="email" required><br>
+                        <label for="phone">Phone<span class="required">*</span></label>
+                        <input type="text" id="phone" oninput="sanitizeToNumbers(this)"required><br>
+                        <button type="button" onclick="saveChanges('billing-address')">Save Changes</button>
+                        <button type="reset" onclick="clearFields('contact-details')">Clear Fields</button>
+                    </fieldset>
+                    <fieldset id="address">
+                        <legend>Billing Address</legend> <!-- Input fields for billing address -->
+                        <label for="address">Address line 1<span class="required">*</span></label>
+                        <input type="text" id="address" required><br>
+                        <label for="address">Address line 2</label>
+                        <input type="text" id="address" required><br>
+                        <label for="address">Address line 3</label>
+                        <input type="text" id="address" required><br>
+                        <label for="city">Town/City<span class="required">*</span></label>
+                        <input type="text" id="city" required><br>
+                        <label for="city">State/County<span class="required">*</span></label>
+                        <input type="text" id="state" required><br>
+                        <label for="postcode">Zipcode/Postcode<span class="required">*</span></label>
+                        <input type="text" id="postcode" required><br>
+                        <button type="button" onclick="saveChanges('billing-address')">Save Changes</button>
+                        <button type="reset" onclick="clearFields('billing-address')">Clear Fields</button>
+                    </fieldset>
+                    <fieldset id="payment">
+                        <legend>Payment Details</legend>  <!-- Input fields for payment details -->
+                        <label for="card">Card Number<span class="required">*</span></label>
+                        <input type="text" id="card" required><br>
+                        <label for="card">Cardholder Name<span class="required">*</span></label>
+                        <input type="text" id="cardholder" required><br>
+                        <label for="expiry">Expiry Date<span class="required">*</span></label>
+                        <input type="text" id="expiry" required><br>
+                        <label for="cvv">CVV<span class="required">*</span></label>
+                        <input type="text" id="cvv" required><br>
+                        <button type="button" onclick="saveChanges('billing-address')">Save Changes</button>
+                        <button type="reset" onclick="clearFields('payment-details')">Clear Fields</button>
+                    </fieldset>
+                    <button type="button" onclick="submitOrder()">Submit Order</button>
+                </form>
+                <div id="checkout-summary">
+                    <h2>Order Summary</h2>
+                    <ul> <!-- Display each cart item -->
+                        ${Array.from(cartItems).map(item => `<li>${item.textContent}</li>`).join('')}
+                    </ul>
+                    <p>Total Amount: £${totalAmount.toFixed(2)}</p>  <!-- Display total amount -->
+                </div>
+            `;
+            document.body.innerHTML = checkoutForm; // Set the HTML content to the constructed checkout form
+
+            document.getElementById('items-container').innerHTML = checkoutForm; // Set the inner HTML of the items container to the checkout form
+        }
+        function filterToCharacters(inputField) { // Function to filter input field value to characters only
+    inputField.value = (inputField.value.match(/[A-Za-z]/g) || []).join('');
+}
+function sanitizeToNumbers(inputField) {  // Function to sanitize input field value to numbers only
+    inputField.value = (inputField.value.match(/\d/g) || []).join('');
+}
+
+function cleanseToNumbersAndSlash(inputField) { // Function to sanitize input field value to numbers and slash only
+    inputField.value = (inputField.value.match(/[\d/]/g) || []).join('');
+}
+const requiredFields = document.querySelectorAll('#checkout-form input[required]'); // Check if there are any empty required fields in the checkout form
+                requiredFields.forEach(field => {
+                    if (!field.value()) {
+                        anyEmptyRequiredField = true; // Set flag if an empty required field is found
+                    }
+ });
+// Event listener for placing the order.
+function submitOrder() { 
+    // Check if all required fields are filled.
+    let requiredFields = ['name', 'surname', 'email', 'phone','address' ,'city','state', 'postcode', 'card', 'cardholder', 'expiry', 'cvv'];
+    for (let field of requiredFields) 
+    {
+        let value = document.getElementById(field).value;
+        if (value === "") {
+            alert("Please fill in all the required fields.");
+            return;
+        }
+    }
+    // Inform the user that the order has been placed.
+    alert('Order submitted successfully!');
+    // Redirect the user to the home page.
+    window.location.href = "home.html";
+};
+
+    function saveChanges(section) {  // Function to save changes in a section
+    const inputs = document.querySelectorAll(`#${section} input`);
+    inputs.forEach(input => {
+        input.dataset.savedValue = input.value;
+    });
+    alert('Changes saved successfully!');
+}
+function clearFields(details) { // Function to clear fields in a section
+    const inputs = document.querySelectorAll(`#${details} input`);
+    inputs.forEach(input => {
+        input.value = ' ';
+    });
+}
+function clearFields(address){ // Function to clear fields in an address section
+    const inputs = document.querySelectorAll('#${address} input');
+    input.forEach(input => {
+        input.value = '';
+    })
+}
+function clearFields(payment){ // Function to clear fields in a payment section
+    const inputs = documentquerySelectorAll('#${payment} input');
+    input.forEach(input => {
+        input.value = '';
+    })
+}
+
+        window.onload = displayItems; // Set the window onload event handler to display items
+        
+    </script>
+     <footer>
+        <button id="buttonTop" title="Top">Return To Top</button>
+        <script>
+document.getElementById('buttonTop').addEventListener('click', function(){
+window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+        </script>
+        <p><a href="pageEditor_ST1.html" target="_blank">Page Editor</a></p>
+        <img src="images/logo.png" alt="logo" height="140" width="200">
+        <p></p>
+        <address>helth@westminster.ac.uk</address>
+        <p></p>
+        <p>© 2024 Helth. All rights reserved.</p>
+    </footer>
+</body>
+</html>

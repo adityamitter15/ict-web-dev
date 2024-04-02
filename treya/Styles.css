@@ -1,6 +1,6 @@
 ﻿body {
     background-color: #F3FFE3;
-    font-family: Arial, sans-serif; /* Set a base font family */
+    font-family: Georgia, 'Times New Roman', Times, serif; /* Set a base font family */
     margin: 0; /* Remove default margin from body */
     padding: 25px; /* Remove default padding from body */
 }
@@ -19,129 +19,280 @@ h4 {
 }
 
 h1 {
-    padding: 65px 0;
-    height: 2px;
+    padding: 20px;
+    border height: 20px;
     background-color: darkgreen;
-    color: black;
+    color: #F3FFE3;
     text-align: center;
+    font-family: 'Geneva';
 }
 
-  #personalDetails {
-            background-color: dodgerblue;
-        }
-
-        #questionaire {
-            background-color: lightseagreen;
-        }
-
-        #buttons {
-            background-color: darkblue;
-            color: darkolivegreen;
-            border: solid 3px;
-            border-radius: 5px;
-            text-align: right;
-            margin-right: 10px;
-            padding: 10px 20px;
-        }
 
 
-        h3 {
-            color: red;
-        }
+.image-container {
+    position: relative;
+    width: 100%; /* Adjust width to 50% of the parent minus some margin */
+    margin: 10px; /* Adds space between the images */
+    box-sizing: border-box; /* Includes padding and border in the element's total width and height */
+    display: flex; /* Aligns the containers side by side */
+    justify-content: center; /* Center children horizontally */
+    align-items: center; /* Center children vertically */
+    vertical-align: top; /* Aligns items at the top */
+    border-radius: 10px; /*corners of container*/
+    overflow: hidden; /* Ensures the content respects the container's border-radius */
+}
 
-        #wrapper {
-            width: 60;
-            margin-left: auto;
-            margin-right: auto;
-        }
+    .image-container img {
+        max-width: 50%; /* Each image takes up 50% of the container's width */
+        max-height: 50vh; /* Each image takes up 50% of the viewport height */
+        height: auto; /* Maintain aspect ratio */
+        display: block;
+        border-radius: 10px; /*corners of images*/
+        margin: 100px; /* Add some margin between images */
+    }
 
-        label {
-            float: left;
-            width: 20%;
-            padding: 1px;
-        }
+    .image-container .hover-text {
+        position: absolute;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+        color: floralwhite;
+        width: 50%;
+        text-align: center;
+        padding: 5px;
+        display: none;
+        font-family: Georgia;
+        border-radius: 0 0 10px 10px; /* corners of padding*/
+    }
+
+/*    .image-container:hover .hover-text {
+        display: block;
+    }*/
+
+/* Optional: For alignment of the images in a single row without wrapping */
+.container { /* Assuming your image containers are within a div with class 'container' */
+    white-space: nowrap; /* Prevents the containers from wrapping */
+    padding: 10px 0;
+    display: flex;
+    flex-wrap: wrap; /* Allows items to wrap to the next line */
+    justify-content: space-around; /* Spreads items evenly with space around them */
+    align-items: flex-start; /* Align items at the start of the container */
+    box-sizing: border-box;
+}
 
 
-#button {
-    background-color: black;
+
+
+
+#personalDetails {
+    background-color: darkolivegreen;
+    border-radius: 10px;
+    color: #F3FFE3;
+}
+
+#questionaire {
+    background-color: darkolivegreen;
+    border-radius: 10px;
+    color: #F3FFE3;
+}
+
+#buttonFeedback {
+    background-color: darkred;
     color: darkolivegreen;
     border: solid 3px;
     border-radius: 5px;
     text-align: right;
     margin-right: 10px;
     padding: 10px 20px;
-    font-size: 20px;
-
-    cursor: pointer;
-    display: inline-block;
-    margin-top: 20px;
+    border-radius: 10px;
 }
 
-    #button:hover {
-        background-color: gray;
+
+h6 {
+    color: red;
+}
+
+h3 {
+    color: #F3FFE3;
+    text-shadow: -2px -2px 0 darkgreen, 2px 2px 0 darkgreen, -2px -2px 0 darkgreen, 2px 2px 0 darkgreen, -1px -1px 0 darkgreen, 1px -1px 0 darkgreen, -1px 1px 0 darkgreen, 1px 1px 0 darkgreen;
+}
+
+#wrapper {
+    width: 60;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+label {
+    float: left;
+    width: 20%;
+    padding: 1px;
+}
+
+
+#preview {
+    display: block; /* Changed from none to block to make it visible */
+    background-color: #f0f0f0; /* Light grey background */
+    padding: 20px; /* Padding around the content */
+    margin: 10px 0; /* Margin for spacing outside the div */
+    border-radius: 5px; /* Optional: adds rounded corners to the div */
+}
+
+    #preview p {
+        margin: 10px 0; /* Adds spacing between paragraphs */
     }
 
-fieldset {
-    border-radius: 10px;
-    margin-bottom: 12px;
+    #preview button {
+        margin-right: 10px; /* Adds spacing between buttons */
+    }
+
+
+
+
+/* Header Styles */
+/*header {
     background-color: #98ac7c;
-}
+    padding: 20px;*/ /* Add padding for header content */
+/*display: flex;*/ /* Arrange header elements horizontally */
+/*justify-content: space-between;*/ /* Align elements horizontally */
+/*align-items: center;*/ /* Align elements vertically */
+/*}
+
+    header h1 {
+        font-size: 2px;*/ /* Set heading size */
+/*margin: 0;*/ /* Remove default margin from heading */
+/*}
+
+        header h1 a {*/ /* Assuming logo is wrapped in an anchor tag */
+/*text-decoration: none;*/ /* Remove underline from logo link */
+/*color: inherit;*/ /* Inherit text color from header */
+/*}*/
+
 
 /* Style the navigation bar container */
-nav {
+/*nav {
     overflow: hidden;
     background-color: #98ac7c;
-    display: flex; /* Arrange links horizontally */
-    justify-content: space-between; /* Evenly distribute links */
-    /*            padding: 8px;*/
+    display: flex;*/ /* Arrange links horizontally */
+/*justify-content: space-between;*/ /* Evenly distribute links */
+/*padding: 8px;
+    align-items: center;
+}*/
+
+/* Style the list to be inline */
+/*nav ul {
+        list-style: none;*/ /* Remove default bullet points */
+/*margin: 0;*/ /* Remove default margin */
+/*padding: 0;*/ /* Remove default padding */
+/*float: left;
+    }
+
+    .nav-items li {
+    display: inline-block;*/ /* Display links inline */
+/*margin-right: 20px;*/ /* Add spacing between links */
+/*font-family: Georgia;
+    font-size: 25px;
+    float: right;
+}*/
+
+/*Style the navigation bar links */
+/*.nav-items a {
+        float: left;*/ /*Position the links side by side */
+/*display: block;
+        color: #F3FFE3;
+        text-align: center;
+        text-decoration: none;*/ /*Remove underline*/
+/*padding: 25px;*/ /*Add padding for buttons */
+/*}*/
+
+
+
+/* Change the color of links on hover */
+/*.nav-items a:hover {
+            background-color: #F3FFE3;
+            color: darkgreen;*/ /* Hover text color */
+/*}
+
+    .nav-items .active {
+        background-color: #98ac7c;
+        color: #f1f1f1;*/ /* Active link text color */
+/*text-decoration: underline;
+    }
+
+        .logo img {
+            display: block;
+            margin-left: 100px;
+        }
+
+        .nav-items {
+            margin-right: 100px;
+        }*/
+
+
+header {
+    background-color: #98ac7c;
+    padding: 10px;
+}
+
+    header h1 {
+        font-size: 2px; /* Set heading size */
+        margin: 0; /* Remove default margin from heading */
+    }
+
+        header h1 a { /* Assuming logo is wrapped in an anchor tag */
+            text-decoration: none; /* Remove underline from logo link */
+            color: inherit; /* Inherit text color from header */
+        }
+
+nav {
+    display: flex;
+    justify-content: space-between;
     align-items: center;
 }
 
-    /* Style the list to be inline */
-    nav ul {
-        list-style: none; /* Remove default bullet points */
-        margin: 0; /* Remove default margin */
-        padding: 0; /* Remove default padding */
-        float: left;
-    }
+.logo img {
+    display: block;
+    margin-left: 100px;
+}
 
-    nav li {
-        display: inline-block; /* Display links inline */
-        margin-right: 30px; /* Add spacing between links */
+.nav-items {
+    margin-right: 100px;
+}
+
+    .nav-items li {
+        display: inline-block;
+        margin-right: 20px;
         font-family: Georgia;
-        font-size: 40px;
-        float: left;
     }
 
-    /*Style the navigation bar links */
-    nav a {
-        float: left;
-        /*Position the links side by side */ display: block;
+    .nav-items a {
         color: #F3FFE3;
-        text-align: center;
-        text-decoration: none; /*Remove underline*/
-        padding: 20px 20px; /*Add padding for buttons */
+        text-decoration: none;
+        padding: 25px;
+        font-size: 18px;
     }
 
-
-
-        /* Change the color of links on hover */
-        nav a:hover {
+        .nav-items a:hover {
             background-color: #F3FFE3;
-            color: darkgreen; /* Hover text color */
+            color: darkgreen;
         }
 
-    nav .active {
+    .nav-items .active {
         background-color: #98ac7c;
-        color: #f1f1f1; /* Active link text color */
+        color: #f1f1f1;
         text-decoration: underline;
     }
 
+
+
+
+
+
+
 footer {
-    background-color: #f0f0f0;
+    background-color: #333;
     padding: 20px;
     text-align: center;
-    color: black; /* Set font color to black */
+    color: black; /*Set font color to black */
 }
 
     footer p {
@@ -162,22 +313,27 @@ footer {
         color: black; /* Set font color to black */
     }
 
+
+#buttonTop {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: black;
+    color: darkolivegreen;
+    border: solid 3px;
+    border-radius: 5px;
+    text-align: right;
+    margin-right: 10px;
+    font-size: 15px;
+    cursor: pointer;
+    display: inline-block;
+}
+
+    #buttonTop:hover {
+        background-color: gray;
+    }
+
 /* Content Styles */
 main {
     padding: 20px; /* Add padding for main content area */
 }
-
-
-
-/* Footer Styles */
-footer {
-    background-color: #333;
-    color: #fff; /* Set footer text color */
-    padding: 20px;
-    text-align: center; /* Center footer content */
-}
-
-    footer a {
-        color: inherit; /* Inherit text color from footer */
-        text-decoration: none; /* Remove underline from links */
-    }

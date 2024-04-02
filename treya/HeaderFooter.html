@@ -6,54 +6,108 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Helth Header Footer</title>
 
-    <link rel="stylesheet" href="Styles.css">
+    <!--<link rel="stylesheet" href="Styles.css">-->
+    <style>
 
+        header {
+            background-color: #98ac7c;
+            padding: 10px;
+        }
+
+            header h1 {
+                font-size: 2px; /* Set heading size */
+                margin: 0; /* Remove default margin from heading */
+            }
+
+                header h1 a { /* Assuming logo is wrapped in an anchor tag */
+                    text-decoration: none; /* Remove underline from logo link */
+                    color: inherit; /* Inherit text color from header */
+                }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo img {
+            display: block;
+            margin-left: 100px;
+        }
+
+        .nav-items {
+            margin-right: 100px;
+        }
+
+            .nav-items li {
+                display: inline-block;
+                margin-right: 20px;
+            }
+
+            .nav-items a {
+                color: #F3FFE3;
+                text-decoration: none;
+                padding: 25px;
+                font-size: 18px;
+            }
+
+                .nav-items a:hover {
+                    background-color: #F3FFE3;
+                    color: darkgreen;
+                }
+
+            .nav-items .active {
+                background-color: #98ac7c;
+                color: #f1f1f1;
+                text-decoration: underline;
+            }
+    </style>
 </head>
 
-<body>
-    <fieldset>
-        <header>
-            <nav>
-                <ul id="top">
-                    <li>
-                        <a href="HomePage.html" class="active">
-                            <img src="images/logo.png" alt="logo" width="125" height="80">
-                        </a>
-                    </li>
-                    <li><a href="#">Gallery</a></li>
-                    <li><a href="#">Shop</a></li>
-                    <li><a href="Feedback.html">Feedback</a></li>
-                    <li><a href="#">Sitemap</a></li>
-                    <li><a href="#">Team</a></li>
-                    <li><a href="#">User Profile</a></li>
-                </ul>
-            </nav>
-        </header>
-    </fieldset>
+<body id="top">
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="HomePage.html" class="active">
+                    <img src="images/logo.png" alt="logo" width="125px" height="80px">
+                </a>
+            </div>
+            <ul class="nav-items">
+                <li><a href="#">Gallery</a></li>
+                <li><a href=shop.html>Shop</a></li>
+                <li><a href="Feedback.html">Feedback</a></li>
+                <li><a href="#">Sitemap</a></li>
+                <li><a href="#">Team</a></li>
+                <li><a href="#">User Profile</a></li>
+            </ul>
+        </nav>
+    </header>
 
-        <div class="mainPage">
+    <div class="mainPage">
+        <!--Your code-->
+        <br><br><br>
+    </div>
 
+    <footer>
 
+        <button id="buttonTop" title="Top">Return To Top</button>
+        <script>
+                /* go to top button of page */
+                document.getElementById('footer').document.getElementById('buttonTop')
+                .addEventListener('click', function () {
+                window.scrollTo({ top: 0, behavior: 'smooth'});
+                });
+        </script>
 
-            <!--Your code-->
+        <br><br>
+        <p><a href="PageEditor.html">Page Editor</a></p>
 
+        <img src="images/logo.png" alt="logo" width="200" height="140">
 
+        <p><address>helth@westminster.ac.uk</address></p>
+        <p>&copy; 2024 Helth. All rights reserved.</p>
 
-            <br><br><br>
-        </div>
-
-        <footer>
-
-            <button id="button" title="Top">Return To Top</button>
-            <br><br>
-            <p><a href="PageEditor.html">Page Editor</a></p>
-
-            <img src="images/logo.png" alt="logo" width="200" height="140">
-
-            <p><address>helth@westminster.ac.uk</address></p>
-            <p>&copy; 2024 Helth. All rights reserved.</p>
-
-        </footer>
+    </footer>
 
 </body>
 </html>

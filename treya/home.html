@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Helth Home Page</title>
+    <link rel="stylesheet" href="Styles.css">
+  </head>
+  <body>
+      <header>
+          <nav>
+              <div class="logo">
+                  <a href="home.html" class="active">
+                      <img src="images/logo.png"
+                           alt="logo" height="80px" width="125px">
+                  </a>
+              </div>
+              <ul class="nav-items">
+                  <li><a href="gallery.html">Gallery</a></li>
+                  <li><a href="shop.html">Shop</a></li>
+                  <li><a href="feedback.html">Feedback</a></li>
+                  <li><a href="sitemap.html">Sitemap</a></li>
+                  <li><a href="team.html">Team</a></li>
+                  <li><a href="profile.html">User Profile</a></li>
+              </ul>
+          </nav>
+      </header>
+
+      <h1>Welcome to the Home Page</h1>
+      <main class="container">
+          <section>
+              <div class="image-container">
+                  <a href="content_ST1.html">
+                      <img src="images/funding.jpg" alt="systemFunding">
+                      <div class="hover-text">Health Systems and Funding</div>
+                  </a>
+
+                  <a href="content_ST2.html">
+                      <img src="images/infectiousDiseases.jpg" alt="infectiousDiseases">
+                      <div class="hover-text">Infectious Diseases</div>
+                  </a>
+              </div>
+              <div class="image-container">
+                  <a href="content_ST3.html">
+                      <img src="images/mortality.jpg" alt="mortality">
+                      <div class="hover-text">Reproductive, Maternal, Newborn and Child Health</div>
+                  </a>
+
+                  <a href="content_ST3.html">
+                      <img src="images/mentalHealth.jpg" alt="mentalHealth">
+                      <div class="hover-text">Non-communicable diseases, Mental Health and Environmental Risks</div>
+                  </a>
+              </div>
+          </section>
+          <br><br><br>
+      </main>
+
+      <footer>
+          <button id="buttonTop" title="Top">Return To Top</button>
+          <script>
+            document.getElementById('buttonTop').addEventListener('click', function(){
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+          </script>
+          <p><a href="pageEditor _ST2.html" target="_blank">Page Editor</a></p>
+          <img src="images/logo.png" alt="logo" height="140" width="200">
+          <p></p>
+          <address>helth@westminster.ac.uk</address>
+          <p></p>
+          <p>© 2024 Helth. All rights reserved.</p>
+      </footer>
+  </body>
+</html>

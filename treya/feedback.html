@@ -1,0 +1,175 @@
+﻿<!doctype html>
+
+<script src="Helth.js"></script>
+<link rel="stylesheet" href="Styles.css">
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Helth Feedback Form</title>
+</head>
+
+
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="home.html" class="active">
+                    <img src="images/logo.png" alt="logo" width="125px" height="80px">
+                </a>
+            </div>
+            <ul class="nav-items">
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href=shop.html>Shop</a></li>
+                <li><a href="feedback.html">Feedback</a></li>
+                <li><a href="sitemap.html">Sitemap</a></li>
+                <li><a href="team.html">Team</a></li>
+                <li><a href="profile.html">User Profile</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="mainPage">
+
+        <div id="feedBackForm" style="display: block;">
+            <h1>Feedback Form</h1>
+
+            <form id="feedbackForm" onsubmit="event.preventDefault(); validateForm();">
+                <h6><i> * Required Fields</i></h6>
+                <fieldset id="personalDetails">
+                    <legend>
+                        <h3>Personal Details:</h3>
+
+                    </legend>
+                    <label for="name">*Full Name: </label>
+                    <input type="text" name="name" id="name" placeholder="Enter your full name" required>
+                    <br>
+                    <label for="email">*Email Address:</label>
+                    <input type="email" name="email" id="email"
+                           placeholder="Enter your email address" required>
+                </fieldset>
+
+
+                <fieldset id="questionaire">
+                    <legend><h3>Questionaire:</h3></legend>
+
+                    <legend>
+                        <label for="visiting">Was this your first time visiting our website?</label>
+                        <input type="radio" name="visiting" id="FirstTimeYes" value="yes" checked> Yes
+                        <input type="radio" name="visiting" id="FirstTimeNo" value="no">No
+                    </legend>
+
+                    <br><br>
+
+                    <legend>
+                        <label for="navigation">Were we informative and user friendly?</label>
+                        <input type="radio" name="navigation" id="FriendlyYes" value="yes" checked> Yes
+                        <input type="radio" name="navigation" id="FriendlyNo" value="no"> No
+                    </legend>
+
+                    <br><br>
+                    <legend>
+                        <label for="InproveNotes">If 'No', tell us how we can improve: </label>
+                        <br><br>
+                        <textarea name="InproveNotes" id="InproveNotes"
+                                  rows="5" cols="60">Add suggestions here:
+                        </textarea>
+                    </legend>
+
+                    <br><br>
+
+                    <legend>
+                        <label for="satisfaction">How satisfied were you with our services? <b>Choose from 0 to 10:</b></label>
+                        <br>
+                        <input type="radio" name="satisfaction" id="0" value="0">0
+                        <input type="radio" name="satisfaction" id="1" value="1">1
+                        <input type="radio" name="satisfaction" id="2" value="2">2
+                        <input type="radio" name="satisfaction" id="3" value="3">3
+                        <input type="radio" name="satisfaction" id="4" value="4">4
+                        <input type="radio" name="satisfaction" id="5" value="5">5
+                        <input type="radio" name="satisfaction" id="6" value="6">6
+                        <input type="radio" name="satisfaction" id="7" value="7">7
+                        <input type="radio" name="satisfaction" id="8" value="8">8
+                        <input type="radio" name="satisfaction" id="9" value="9">9
+                        <input type="radio" name="satisfaction" id="10" value="10">10
+                    </legend>
+
+ 
+
+                    <br><br>
+                    <legend>
+                        <label for="recommend">Would you recommend us to friends and family?</label>
+                        <input type="radio" name="recommend" id="RecommendYes" value="yes" checked> Yes
+                        <input type="radio" name="recommend" id="RecommendNo" value="no"> No
+                    </legend>
+
+                    <br><br>
+
+                    <label for="notifications">*Would you like to recieve updates and offers from us?</label>
+                    <select id="notifications" name="notifications" required>
+                        <option value="">Please select an option</option>
+                        <option value="EmailYes">Yes - By email</option>
+                        <option value="EmailNo">No</option>
+                    </select>
+
+                    <br><br><br>
+                    <label for="AdditionalNotes">Do you have any additional queries or requests?</label>
+                    <br><br>
+                    <textarea name="AdditionalNotes" id="AdditionalNotes"
+                              rows="5" cols="60">Type here:
+                    </textarea>
+
+                </fieldset>
+                <br>
+
+                <fieldset id="buttonFeedback">
+                    <button type="submit" value="submit">Preview</button>
+                </fieldset>
+            </form>
+
+        </div>
+
+
+        <div id="preview" style="display: none;">
+            <h2>Feedback Preview</h2>
+
+            <fieldset id="personalDetails">
+                <p><b>Name:</b> <span id="preview-name"></span></p>
+                <p><b>Email:</b> <span id="preview-email"></span></p>
+            </fieldset>
+            <fieldset id="questionaire">
+                <p><b>Subject:</b> <span id="preview-subject"></span></p>
+                <p><b>Visiting:</b> <span id="preview-visiting"></span></p>
+                <p><b>Navigation:</b> <span id="preview-navigation"></span></p>
+                <p><b>Satisfaction:</b> <span id="preview-satisfaction"></span></p>
+                <p><b>Notifications:</b> <span id="preview-notifications"></span></p>
+                <p><b>Additional Notes:</b> <span id="preview-AdditionalNotes"></span></p>
+            </fieldset>
+            <fieldset id="buttonFeedback">
+                <button onclick="editForm()">Edit</button>
+                <button type="reset" onclick="submitForm()">Submit</button>
+            </fieldset>
+        </div>
+        <br><br>
+    </div>
+
+    <footer>
+        <button id="buttonTop" title="Top">Return To Top</button>
+        <script>
+            document.getElementById('buttonTop').addEventListener('click', function() {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        </script>
+
+        <p><a href="pageEditor _ST2.html" target="_blank">Page Editor</a></p>
+
+        <img src="images/logo.png" alt="logo" width="200" height="140">
+
+        <p><address>helth@westminster.ac.uk</address></p>
+        <p>&copy; 2024 Helth. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

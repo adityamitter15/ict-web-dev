@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editor's Page</title>
+    <style>
+header {
+    background-color: #98ac7c;
+    padding: 15px; 
+    width: 100%;
+}
+nav {
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+}
+.logo img {
+    display: block;
+    margin-left: 100px;
+}
+.nav-items{
+    margin-right: 100px;
+}
+.nav-items li {
+    display: inline-block; 
+    margin-right: 20px; 
+}
+.nav-items a {
+    color: #F3FFE3;
+    text-decoration: none;
+    padding: 25px;
+    font-size: 18px;
+}
+.nav-items a:hover {
+    background-color: #F3FFE3;
+    color: darkgreen; 
+}
+.nav-items .active {
+    background-color: #98ac7c;
+    color: #f1f1f1; 
+    text-decoration: underline;
+}
+
+body .editor {   /* Reset margin and padding */
+    margin: 0; 
+    padding: 0;
+    /* display: flex; Flex layout for centering content vertically and horizontally */
+    justify-content: center;
+    align-items: center;
+    height: 100%;  /* Set height to 100% of viewport */
+    background-color: #98ac7c; /* Set background color */
+ }
+.wrapper{
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+ }
+.box { /* Styles for the main container */
+    background-color: rgb(236, 162, 135); /* Set background color */
+    width: 70%;     /* Set width to 70% with a maximum width of 1200px */
+    max-width: 1200px;
+    padding: 0;
+    border-radius: 10px;
+}
+.section-heading{ /* Styles for section headings */
+    background-color: #f3ffe3;
+    padding: 5px 10px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    text-align: center; /* Center text */
+}
+h1 { /* Styles for h1 headings */
+    text-align: center;
+    margin-bottom: 20px;
+ }
+
+h3 { /* Styles for h3 headings */
+    text-align: center;
+    color: black;
+    margin-bottom: 10px;
+}
+
+p { /* Styles for paragraphs */
+    margin-bottom: 10px;
+    line-height: 1.6;
+ }
+
+section { /* Styles for sections */
+    margin-bottom: 40px;
+}
+
+.image-container { /* Styles for image containers */
+    text-align: center;
+    margin-bottom: 20px;
+}
+ /* Back to top link */
+.back-to-top {
+    position: fixed;  /* Set position to fixed */
+    bottom: 20px; /* Position bottom and right */
+    right: 20px;
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+     text-decoration: none; /* Remove default link decoration */
+    display: none;   /* Initially hide the back to top link */
+}
+
+/*Footer*/
+
+footer {
+    background-color: #98ac7c;
+    padding: 20px;
+    text-align: center;
+    color: black;  /*Set font color to black */
+}
+
+footer p {
+    margin: 5px;
+    color: black;
+}
+
+footer a {
+    text-decoration: none;
+    color: black; /* Set font color to black */
+}
+
+    footer a:hover {
+        text-decoration: underline; /* Underline link on hover */
+    }
+
+footer address {
+    color: black; /* Set font color to black */
+}
+
+footer #footer-button {
+    background-color: black;
+    color: darkolivegreen;
+    border: solid 3px;
+    border-radius: 5px;
+    text-align: right;
+    margin-right: 10px;
+    padding: 10px 20px;
+    font-size: 20px;
+
+    cursor: pointer;
+    display: inline-block;
+    margin-top: 20px;
+}
+
+footer #footer-button:hover {
+    background-color: gray;
+}
+  
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="homepage.html" class="active">
+                    <img src="images/logo.png" alt="logo" width="125px" height="80px"> 
+                </a>
+            </div>
+            <ul class="nav-items">
+                <li><a href="#">Gallery</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="#">Feedback</a></li>
+                <li><a href="#">Sitemap</a></li>
+                <li><a href="#">Team</a></li>
+                <li><a href="#">User Profile</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="wrapper">
+        <div class="box">
+            <h1>EDITOR'S PAGE</h1> <!-- Editor's Page heading -->
+            <section>   <!-- Splash Screen section -->
+                <div class="right">
+                    <div class="section-heading"><h3>SPLASH SCREEN</h3></div>
+                    <div class="image-container"></div> <!-- Image container for the Splash Screen -->
+                    <p> <!-- Description of the Splash Screen -->
+                    The Splash Screen welcomes the visitors with a vibrant display of wellness and vitality.
+                    As the gateway to the platform, the splash csreen embodies the essence of the website, offering a glimpse into it's
+                    purpose and mission. Featuring soothing colors, captivating imagery, and perhaps a subtle animation
+                    the splash screen sets the tone for a journey towards holistic well-being.  
+                    With an intuitive layout and clear call-to-action, the splash screen serves as a welcoming
+                    introduction, enticing visitors to explore the wealth if resources and information
+                    awaiting them within the website's domain.
+                    </p>
+                    <p> <!-- Information about informative content -->
+                    INFORMATIVE CONTENT: Concise yet informative, our content provides users with insight into our 
+                    website's purpose and offerings. It includes a succinct description of our mission, highlighting key 
+                    features and introducing our team members.
+                    </p>
+                    <p> <!-- Information about animation and transition -->
+                        ANIMATION & TRANSITION: To boost user engagement, the Splash Screen could integrate animated effects 
+                        or transitions for a dynamic and interactive user experience. These enhancements serve to highlight 
+                        essential elements and navigate users seamlessly through their virtual interaction.
+                    </p>
+                    <p>  <!-- Information about CSS styling -->
+                        STYLING(CSS): is employed to design the Splash Screen, determining the arrangement, color scheme, 
+                        font styles, and visual enhancements. The aim is to craft an attractive and unified layout that reflects 
+                        our brand identity and elevates user experience.
+                    </p>
+                    <p> <!-- Information about JavaScript functionality -->
+                        JAVASCRIPT FUNCTIONALITY: JavaScript can be employed to introduce interactive elements or dynamic functionality 
+                        to the Splash Screen, including timed transitions. Such additions serve to captivate users and maintain their 
+                        engagement throughout their visual interaction with the website.
+                    </p>
+                    <a href="splash.html">Go to Splash Screen</a> <!-- Link to the Splash Screen -->
+                </div>
+            </section>
+            <section>   <!-- Shop section -->
+                <div class="section-heading"><h3>SHOP</h3></div>
+                <div class="image-container"> <!-- Image container for the Shop -->
+                </div>
+                <p> <!-- Description of the Shop -->
+                    The Shop Page plays a crucial role on the website, offering visitors a platform to discover and buy a 
+                    curated selection of health and wellness products.   
+                </p>
+                <p> <!-- Information about layout and design -->
+                    LAYOUT & DESIGN: The layout of the page is crafted to be visually attractive and easy to navigate,
+                    with a user-friendly design that is clear and intuitive. Products are showcased in a grid layout, 
+                    facilitating seamless browsing of the available items.
+                </p>
+                <p>  <!-- Information about product presentation -->
+                    PRODUCT PRESENTATION: Every product is showcased alongside an image, its name, and price, enabling 
+                    users to swiftly identify items of interest and review essential information before proceeding with a purchase. 
+                </p>
+                <p>  <!-- Information about interactive features -->
+                    INTERACTIVE FEATURES: Within the Shop, interactive features like quantity selectors and an "Add to Cart" button are 
+                    incorporated for each product. This allows users to easily adjust the quantity of items they want to buy and add them 
+                    to their cart with a simple click.
+                </p>
+                <p>   <!-- Information about dynamic pricing -->
+                    DYNAMIC PRICING: As users change the quantity of items in their cart, the total price is automatically updated, giving 
+                    immediate feedback on the overall cost of the selected items in real-time. 
+                </p>
+                <p> <!-- Information about cart management -->
+                    CART MANAGEMENT: Additionally, the page provides functionality to manage the shopping cart, including a 'reset cart' 
+                    button to clear the contents and begin anew.
+                </p>
+                <p> <!-- Information about CSS styling -->
+                    CSS STYLING: CSS is utilized to improve the visual aesthetics of the page by specifying fonts, colors, layout, and 
+                    other stylistic elements. This guarantees a uniform and appealing user experience across various devices and screen sizes.
+                </p>
+                <p>  <!-- Information about JavaScript functionality -->
+                    JAVASCRIPT FUNCTIONALITY: JavaScript is employed to introduce interactivity and dynamic functionality to the Shop Page, 
+                    incorporating features like adjusting quantities, managing the cart, and dynamically calculating prices. 
+                    These enhancements elevate the user's shopping experience.
+                </p>
+                <a href="shop.html">Go to Shop</a> <!-- Link to the Shop -->
+            </section>
+            <section>
+                <div class="section-heading"><h3>CONTENT PAGE</h3></div>  <!-- Section heading for the Content Page -->
+                <div class="image-container">  <!-- Image container for the Content Page (if applicable) -->
+                </div>
+                <p>
+                    The Content Page is a vital component of the website, offering valuable insights into Health Systems and Funding.
+                </p>
+                <p>     <!-- Introduction to Immunization and Vaccinations -->
+                    INTRODUCTION: The page begins with an intorduction to Immunization and Vaccinations, highlighting
+                    the importance of vaccines and their effects. 
+                </p>
+                <p>  <!-- Information about the global shortage of health workers -->
+                HEALTH WORKERS: the page further ellaborates on a study that projects upon the global shortage
+                of health workers by 2023 and how ithas already started reducing. 
+                </p>
+                <p>  <!-- Information about women in the health care workforce -->
+                    WOMEN HEALTH CARE WORKERS: This topic talks about how women are the heart and sol of the health care workforce.
+                    This page provides users with information about the fact that women account for 70% of all health workers and how UNICEF supports and trains
+                    community health workers to provide essential services.
+                </p>
+                <p> <!-- Information about funding for health workers -->
+                    FUNDING FOR HEALTH WORKERS: This section provides information about the support provided by the RCN Foundation
+                    to memebers of the nursing and midwifery professions whoa re experienceing financial hardship.
+                </p>
+                <p> <!-- Information about styling elements -->
+                    STYLING ELEMENTS: CSS plays a crucial role in defining the look and feel of the Content Page, improving its layout, typography, 
+                    and overall presentation to enrich the user experience. 
+                </p>
+                <p> <!-- Information about JavaScript functionality -->
+                    JAVASCRIPT FUNCTIONALITY: JavaScript can be employed to boost the interactivity of the Content Page by introducing features like smooth scrolling, 
+                    interactive elements, or dynamic updates to the content.
+                </p>
+                <a href="content_ST1.html">Go to Contents Page</a> <!-- Link to the Content Page -->
+            </section>
+            <!-- Back to top link -->
+            <a href="#" class="back-to-top">Back to Top</a>
+        </div>
+    </div>
+    <script>
+        // Back to top functionality
+        window.addEventListener('scroll', function() { // Add event listener to window scroll event
+            var backToTopButton = document.querySelector('.back-to-top'); // Select the back to top button
+
+            if (window.scrollY > 200) { // If window scroll position is greater than 200 pixels
+
+                backToTopButton.style.display = 'block'; // Display the back to top button
+            } else {
+                backToTopButton.style.display = 'none'; // Hide the back to top button
+
+            }
+        });
+         // Add event listener to back to top button click event
+        document.querySelector('.back-to-top').addEventListener('click', function(e) {
+            e.preventDefault(); // Prevent default behavior of link
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
+    <footer>
+
+
+
+        <button id="button" title="Top">Return To Top</button>
+
+        <br><br>
+
+        <p><a href="pageEditor_ST1.html" target="_blank">Page Editor</a></p>
+
+
+
+        <img src="images/logo.png" alt="logo" width="200" height="140">
+
+
+
+        <p><address>helth@westminster.ac.uk</address></p>
+
+        <p>&copy; 2024 Helth. All rights reserved.</p>
+
+
+
+    </footer>
+</body>
+</html>

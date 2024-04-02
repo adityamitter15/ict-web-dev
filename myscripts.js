@@ -1,6 +1,10 @@
+document.getElementById("groupId0")
+    .addEventListener("click", function() {
+    document.location.href = "varanya/splash.html";
+});
 document.getElementById("groupId1")
     .addEventListener("click", function() {
-    document.location.href = "index.html";
+    document.location.href = "treya/home.html";
 });
 
 document.getElementById("groupId4")
@@ -10,7 +14,7 @@ document.getElementById("groupId4")
 
 document.getElementById("groupId5")
     .addEventListener("click", function() {
-    document.location.href = "shop.html";
+    document.location.href = "varanya/shop.html";
 });
 
 document.getElementById("groupId6")
@@ -20,7 +24,7 @@ document.getElementById("groupId6")
 
 document.getElementById("groupId7")
     .addEventListener("click", function() {
-    document.location.href = "feedback.html";
+    document.location.href = "treya/feedback.html";
 });
 
 document.getElementById("groupId8")
@@ -39,41 +43,21 @@ document.getElementById("groupId10").addEventListener("click", function() {
         students[i].style.display = (students[i].style.display === "block" ? "none" : "block");
     }
 });
+document.getElementById("groupId11")
+    .addEventListener("click", function() {
+    document.location.href = "varanya/content_ST1.html";
+});
 
+document.getElementById("groupId12")
+    .addEventListener("click", function() {
+    document.location.href = "treya/content_ST2.html";
+});
 
 document.getElementById("groupId14")
     .addEventListener("click", function() {
     document.location.href = "content.html";
 });
 
-
-// // Expanded view for gallery items 
-// function expandThumbnail(thumbnail) {
-//     thumbnail.classList.toggle('expanded');
-
-//     // Close other expanded thumbnails
-//     const expandedThumbnails = document.querySelectorAll('.gallery-item.expanded');
-//     expandedThumbnails.forEach(item => {
-//         if (item !== thumbnail) {
-//             item.classList.remove('expanded');
-//         }
-//     });
-// }
-
-
-
-
-
-// function showDescription(description) {
-//     var extendedView = document.querySelector('.extended-view');
-//     var descriptionElement = document.getElementById('description');
-//     descriptionElement.innerHTML = description;
-//     extendedView.style.display = 'block';
-// }
-
-// function hideDescription() {
-//     document.querySelector('.extended-view').style.display = 'none';
-// }
 document.getElementById('applyChanges').addEventListener('click', function() {
     const colorScheme = document.getElementById('colorScheme').value;
     const fontFamily = document.getElementById('fontFamily').value;
@@ -92,18 +76,7 @@ document.getElementById('applyChanges').addEventListener('click', function() {
 });
 
 
-
-
-// $(function(){
-//     $("#navbar-placeholder").load("path/to/HeaderFooter.html");
-// });
-
-
-
-
 /* go to top button*/
-document.addEventListener("DOMContentLoaded", function () {
-    document.getElementById("footer-button").addEventListener("click", function () {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-});
+document.getElementById("footer-button").addEventListener('click', function(){
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });

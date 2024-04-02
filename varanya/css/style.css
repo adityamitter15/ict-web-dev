@@ -1,0 +1,405 @@
+/* navbar */
+header {
+    background-color: #98ac7c;
+    padding: 10px;
+    width: 100%;
+}
+
+    header h1 {
+        font-size: 2px; /* Set heading size */
+        margin: 0; /* Remove default margin from heading */
+    }
+
+        header h1 a { /* Assuming logo is wrapped in an anchor tag */
+            text-decoration: none; /* Remove underline from logo link */
+            color: inherit; /* Inherit text color from header */
+        }
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    display: block;
+    margin-left: 100px;
+}
+
+.nav-items {
+    margin-right: 100px;
+}
+
+    .nav-items li {
+        display: inline-block;
+        margin-right: 20px;
+        font-family: Georgia;
+    }
+
+    .nav-items a {
+        color: #F3FFE3;
+        text-decoration: none;
+        padding: 25px;
+        font-size: 18px;
+    }
+
+        .nav-items a:hover {
+            background-color: #F3FFE3;
+            color: darkgreen;
+        }
+
+    .nav-items .active {
+        background-color: #98ac7c;
+        color: #f1f1f1;
+        text-decoration: underline;
+    }
+    footer {
+        background-color: #333;
+        padding: 20px;
+        text-align: center;
+        color: black;  /*Set font color to black */
+        width: 100%;
+    }
+    
+    footer p {
+        margin: 5px;
+        color: black;
+    }
+    
+    footer a {
+        text-decoration: none;
+        color: black; /* Set font color to black */
+    }
+    
+        footer a:hover {
+            text-decoration: underline; /* Underline link on hover */
+        }
+    
+    footer address {
+        color: black; /* Set font color to black */
+    }
+    
+    footer #footer-button {
+        background-color: black;
+        color: darkolivegreen;
+        border: solid 3px;
+        border-radius: 5px;
+        text-align: right;
+        margin-right: 10px;
+        padding: 10px 20px;
+        font-size: 20px;
+    
+        cursor: pointer;
+        display: inline-block;
+        margin-top: 20px;
+    }
+    
+    footer #footer-button:hover {
+        background-color: gray;
+    }
+
+/* Splash Screen */
+.splash{
+    /* background-color: #c1ceaf; Add a background color */
+    background-image: linear-gradient(to bottom, rgba(245, 246, 252, 0.52), rgba(103, 167, 82, 0.73)),
+    url(images/BG.png);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Make sure the body covers the entire viewport height */
+    margin: 0; /* Remove default margin */
+    font-size: 16px; /* Set the base font size */
+}
+
+.welcome {
+    text-align: center; /* Center-align the content */
+}
+
+.welcome_box {
+    margin-bottom: 20px;
+    font-size: 28px; /* Adjust the font size for the welcome box */
+}
+
+.welcome_box h1 {
+    font-size: 24px; /* Adjust the font size for the main heading */
+}
+
+.welcome_box p {
+    font-size: 20px; /* Adjust the font size for paragraphs */
+}
+
+.member {
+    font-size: 20px; /* Adjust the font size for team members */
+}
+.splash-img img{
+  max-width: 100%;
+  max-height: 300px;
+}
+button {
+    margin-top: 10px; /* Add space below the text */
+    background-color: black;
+    color: white;
+    font-size: 16px; /* Adjust the font size for buttons */
+}
+
+
+
+
+
+/* Shop */
+body { /* Styling for the body */
+    background-color: #F3FFE3; 
+    font-family: Arial, sans-serif; 
+    margin: 0;
+}
+.container { /* Styling for the main container */
+    display: flex; 
+}
+#items-container { /* Styling for the items container */
+    width: 100%
+}
+#cart { /* Styling for the cart */
+
+    width: 450px;
+    background-color: #98ac7c;
+    padding: 20px;
+    max-height: max-content;
+}
+.product-container{ /* Styling for the product container */
+    display: flex;
+    flex-wrap: wrap;
+}
+.product-box{ /* Styling for each product box */
+    margin-bottom: 20px;  /* Margin bottom */
+    padding: 20px;
+    margin-right: 20px;
+    margin-left: 1px;
+    margin-top: 5px;
+    border: 2px solid black;
+    border-radius: 5px;
+}
+.item { /* Styling for each item */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 1px;
+    padding: 5px;
+}
+button { /* Styling for buttons */
+    background-color: black; /* Background color black */
+    border: none; /* No border */
+    color: white; /* Text color white */
+    padding: 5px 10px; /* Padding of 5px top and bottom, 10px left and right */
+    text-align: center;   /* Center-align text */
+    text-decoration: none;  /* No text decoration */
+    display: inline-block; /* Display as inline-block */
+    font-size: 14px;       /* Font size of 14px */
+    margin: 4px 2px;         /* Adds 4 pixels to the top and 2 pixels on either side of button */
+    cursor: pointer;         /* Cursor will appear as a hand icon when hovering over the button */
+    border-radius: 5px;       /* Rounds the corners of the button to make it look more like a circle */
+}
+form { /* Styling for forms */
+    padding: 30px;           /* Adding 30 pixels of padding around form elements */
+    background-color: #F3FFE3;       /* Setting the background color to light yellow */
+    width: 900px;             /* Width set to 900 pixels */
+    margin: 20px;             /* Adding a 20 pixel margin above and below the form */
+    margin: auto;             /* Centering the form horizontally in its parent element (if any) */
+    border-radius: 3px black;      /* Making the edges rounded with a shadow effect */
+}
+form fieldset { /* Styling for form fieldsets */
+    border: 3px solid black;         /* Adding a 3 pixel thick black border around the fieldset */
+    padding: 10px;                    /* Adding 10 pixels of space between the outside edge of the fieldset */
+    margin-bottom: 10px;             /* Adding a 10 pixel margin below the fieldset */
+    margin-bottom: 20px;             /* Adding another 10 pixels at the bottom of the fieldset */
+    border-radius: 10px;               /* Making the corners of the fieldset rounded with a radius of 10 pixels */
+}
+legend{ /* Styling for form legends */
+    font-weight: bold;             /* Makes legend text bold */
+    margin-bottom: 10px;             /* Adding a 10 pixel space below the legend text */
+}
+form label { /* Styling for form labels */
+    display: block;                /* Display labels as blocks so they can be styled separately from their associated input fields */
+    margin-bottom: 5px;             /* Adding a 5 pixel space between the label and associated input/textarea */
+}
+
+form input[type="text"], /* Styling for form input fields */
+form input[type="email"] { 
+    width: 100%;                /* Sets the width of the input field to take up the full available space */
+    padding: 8px;                /* Inserts 8 pixels of padding into the top and bottom of the input field */
+    margin-bottom: 10px;           /* Adding a 10 pixel space below each input field */
+    border: 1px solid #ccc;         /* A thin dark gray border around the input field */
+    border-radius: 5px;             /* Makes the edges rounded so they don't look too square */
+    box-sizing: border-box;         /* Makes sure that the padding and border are included in the element's total width */
+}
+form button { /* Styling for form buttons */
+    padding: 10px 20px;           /* Increasing the height and width of the submit button */
+    margin-right: 10px;             /* Adding a 10 pixel space to the right of the button */
+    background-color: black;         /* Changing the background color to black */
+    color: white;                    /* Changing the text color to white */
+    border: none;                    /* Removing the border from the button */
+    border-radius: 5px;                /* Making the edges rounded so they don't look too square */
+    cursor: pointer;                    /* Changing the mouse cursor to a hand icon when hovering over the button */
+    transition: background-color 0.3s;    /* Creating a smooth color change effect when hovered over */
+}
+
+form button:hover { /* Hover effect for form buttons */
+    background-color: #45a049;         /* Changes the background color to a lighter green on mouse over */
+}
+#checkout-summary { /* Styling for the checkout summary */
+    width: 250px;                /* Setting the width of the checkout summary box to 250 pixels */
+    height: 300px;                /* Setting the height of the checkout summary box to 300 pixels */
+    margin-top: 100px;               /* Adding a 100 pixel space above the checkout summary box */
+    margin-right: 10px;               /* Adding a 10 pixel space to the right of the checkout summary box */
+    margin-bottom: 10px;               /* Adding a 10 pixel space below the checkout summary box */
+    padding: 5px;                      /* Inserting a 5 pixel padding around the checkout summary box */
+    border: 3px solid black;             /* Adding a 3 pixel thick, black border around the checkout summary box */
+    border-radius: 10px;                 /* Making the corners of the checkout summary box rounded */
+    text-align: center;                    
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin-right: 50px;                   
+}               
+#checkout-form{ /* Styling for the checkout form */
+    width: 700px;                 /* Setting the width of the checkout form to 700 pixels */
+    margin-top: 10px;                 /* Adding a 10 pixel space above the checkout form */
+    margin-bottom: 10px;               /* Adding a 10 pixel space below the checkout form */
+    padding: 10px;                      /* Inserting a 10 pixel padding around the checkout form */
+    border-radius: 5px;                   /* Making the corners of the checkout form rounded */
+    background-color: #F3FFE3;           /* Giving the checkout form a light yellow background color */
+}
+#checkout-form h2{ /* Styling for checkout form headings */
+    text-align: center;                   /* Center aligning all heading elements in the checkout form */
+}
+#checkout-summary ul { /* Styling for checkout summary list */
+    list-style-type: none;                   /* Removes the default bullet points next to list items */
+    padding: 0;                               /* Removes any padding that may be added by default */
+}
+
+#checkout-summary ul li { /* Styling for checkout summary list items */
+    margin-bottom: 5px;                         /* Adds a 5 pixel space between each item in the list */
+}
+input[type="text"], input[type="number"] { /* Styling for input fields */
+     width: 100%;                               /* Sets the field width to take up the full available space */
+    padding: 8px;                             /* Padding adds extra space around the text field */
+    margin: 5px 0;                               /* Margin adds extra space above and below the text field */
+    border: 1px solid #ccc;                         /* A 1 pixel thick, grey border around the text field */
+    border-radius: 4px;                               /* Rounds the edges of the text field to give it a more modern look */
+    box-sizing: border-box;                           /* Ensures that the padding and border do not add extra space to the total width */
+}
+input[type="number"] { /* Styling for number input fields */
+    width: 70px;                               /* Sets the width of the number input field to 70 pixels */
+}
+.container { 
+    display: flex; /* Makes container a flexbox */
+    min-height: 100vh; /* Sets minimum height to viewport height */
+    width: 100%;        /* Sets width to full screen width */
+    background-color: #F3FFE3; /* Optional background color for container */
+}
+
+
+/* Content Page */
+.content {
+    background-color: #c1ceaf; /* sets the backgrounf color for the page */
+    font-family: Arial, sans-serif;   /* Sets the default font to be used in this document */ 
+    display: flex;                      /* Allows us to use the flexbox layout model */
+    flex-direction: column;              /* The main axis of the flex container is set to column (from top to bottom) */
+    align-items: center;               /* Centers items on the vertical axis (from top to bottom)*/
+}
+h1, h2, h3 { 
+    color: #333;                        /* Changes the text color of headings */
+    text-align: center;                 /* Aligns all heading elements to the center */
+}
+h3 {
+    margin: 16px 0;                      /* Adds a 16 pixel margin above and below each heading element */
+}
+.content-box {
+    max-width: 1000px;                    /* Sets a maximum width for the box that contains the main content */
+    padding: 20px;                        /* Adds a 20 pixel padding around each box */
+    background-color: #F3FFE3;            /* Sets the background color of boxes */
+    border-radius: 10px;                   /* Rounds the corners of the boxes */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Applies a shadow effect to the boxes */
+}
+section {
+    margin-bottom: 40px;                    /* Adds space below each section */
+    display: flex;                            /* Allows us to use the flexbox layout model within sections */
+    flex-direction: column;                 /* Stacks the content of each section vertically */
+    align-items: center;                      /* Centeres the content within its container along the cross axis */
+}
+section p {
+    max-width: 100%;                        /* Limits the width of paragraphs to their container's width */
+    padding: 0 20px;                        /* Adds additional spacing between paragraphs within sections */
+    text-align: justify;                 /* Justifies the paragraph text within its container */
+    margin-bottom: 10px; /* Reduced bottom margin */
+}
+section .image-container {                 /* Styles the image container div */
+    margin: auto;                            /* Centers the image horizontally within its parent element */
+    width: 80%;                              /* Sets the width of the image container as 80% of its parent element */
+    height: 50%; /* Set height to auto to maintain aspect ratio */
+    display: flex;               /* Enables Flexbox layout model for the image container */
+    justify-content: center;      /* Centers images horizontally inside their containers */
+    align-items: center;          /* Centers images vertically inside their containers */
+    border: 1px solid #ccc;          /* Draws a light grey border around the image container */
+    padding: 10px;                 /* Adds a 10 pixel padding around the image container */
+    box-sizing: border-box;          /* Includes the border and padding when calculating width/height properties */
+    border-radius: 10px; /* Rounded corners for image container */
+    overflow: hidden; /* Ensure images don't overflow */
+}
+section img {   
+    max-width: 100%;       /* Makes sure that the width of the image is always at most 100% of its parent element */
+    max-height: 100%; /* Set max-height to 100% to fit within container */
+    object-fit: contain; /* Maintain aspect ratio */
+}
+
+.text-section{      /* Styles the text sections (not the right one) */
+    margin-top: -35px;                 /* Pushes down the top of the left text section by 35 pixels */
+}
+
+
+/* Footer */
+
+footer {
+    background-color: #98ac7c;
+    padding: 20px;
+    text-align: center;
+    color: black;  /*Set font color to black */
+}
+
+footer p {
+    margin: 5px;
+    color: black;
+}
+
+footer a {
+    text-decoration: none;
+    color: black; /* Set font color to black */
+}
+
+    footer a:hover {
+        text-decoration: underline; /* Underline link on hover */
+    }
+
+footer address {
+    color: black; /* Set font color to black */
+}
+
+footer #footer-button {
+    background-color: black;
+    color: darkolivegreen;
+    border: solid 3px;
+    border-radius: 5px;
+    text-align: right;
+    margin-right: 10px;
+    padding: 10px 20px;
+    font-size: 20px;
+
+    cursor: pointer;
+    display: inline-block;
+    margin-top: 20px;
+}
+
+footer #footer-button:hover {
+    background-color: gray;
+}
+  
+  
